@@ -31,7 +31,7 @@ for degree in range(1, 21):
     model = Ridge(alpha=1e-3)
     scores = cross_val_score(model, X_poly, y_train, cv=5, scoring="r2")
     mean_score = scores.mean()
-    print(f"  Degree {degree}: CV R2 = {mean_score:.6f} ± {scores.std():.6f}")
+    print(f"  Degree {degree}: CV R2 = {mean_score:.6f} +/- {scores.std():.6f}")
     if mean_score > best_score:
         best_score = mean_score
         best_degree = degree
